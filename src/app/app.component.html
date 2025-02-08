@@ -16,6 +16,10 @@
   <p *ngIf="isValid !== null">
     {{ isValid ? '✅ Valid Phone Number' : '❌ Invalid Phone Number' }}
   </p>
+
+  <div *ngIf="isVanity" class="vanity-warning">
+    {{ vanityMessage }}
+  </div>
   
   <div *ngIf="isValid === false" class="invalid-hints">
     <small>Valid numbers must:</small>
@@ -24,7 +28,6 @@
       <li>Start with 6,7,8, or 9</li>
       <li>Not contain all identical digits</li>
       <li>Not be sequential numbers</li>
-      <li>Not have 4+ repeating consecutive digits</li>
     </ul>
   </div>
 </div>
